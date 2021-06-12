@@ -10,16 +10,22 @@ function App() {
 
   const {status, data} = useFirestoreCollectionData(databaseRef)
 
+  const addCard = async ({content, select}: any) => {
+    databaseRef.add({content: content, select: select})
+  }
+
   return (
     <div>
       <h1>Simple Site</h1>
-      <NewCard/>
+      <NewCard
+        addCard={addCard}
+      />
       {
         status !== 'loading' && data.length > 0 ?
-          data.map((post, index) => (
+          data.map((card, index) => (
             <DetailCard 
               key={index}
-              post={post}
+              card={card}
             />
           ))
         :

@@ -13,21 +13,17 @@ const useStyles = makeStyles(() =>
   })
 )
 
-type CardProps = {
-  post: any,
-}
-
-export default function DetailCard({post}: CardProps) {
+export default function DetailCard({card}: any) {
   const style = useStyles()
 
   return (
     <Card className={style.root}>
       <CardHeader
-        title={"Post"}
+        title={"Card"}
       />
       <CardContent>
-        <Typography color={post.select}>
-          {post.content}
+        <Typography color={card.select}>
+          {card.content}
         </Typography>
       </CardContent>
       <CardActions>
