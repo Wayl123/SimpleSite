@@ -1,5 +1,6 @@
 import React from 'react'
-import {Card, CardContent, CardHeader, Typography} from '@material-ui/core'
+import {Card, CardActions, CardContent, CardHeader, Typography, IconButton} from '@material-ui/core'
+import {Edit, Delete} from '@material-ui/icons'
 import {makeStyles, createStyles} from '@material-ui/core/styles'
 
 const useStyles = makeStyles(() => 
@@ -24,13 +25,15 @@ export default function DetailCard() {
         <Typography>
           Some content
         </Typography>
-        <Typography color='primary'>
-          Primary
-        </Typography>
-        <Typography color='secondary'>
-          Secondary
-        </Typography>
       </CardContent>
+      <CardActions>
+        <IconButton aria-label='edit'>
+          <Edit/>
+        </IconButton>
+        <IconButton aria-label='delete'>
+          <Delete/>
+        </IconButton>
+      </CardActions>
     </Card>
   )
 }
