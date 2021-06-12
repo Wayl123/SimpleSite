@@ -18,13 +18,11 @@ const firebaseConfig = {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
-    </FirebaseAppProvider>
-  </React.StrictMode>,
+  <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </FirebaseAppProvider>,
   document.getElementById('root')
 );
 

@@ -13,7 +13,7 @@ const useStyles = makeStyles(() =>
   })
 )
 
-export default function DetailCard({card}: any) {
+export default function DetailCard({card, editCard, deleteCard}: any) {
   const style = useStyles()
 
   return (
@@ -30,7 +30,9 @@ export default function DetailCard({card}: any) {
         <IconButton aria-label='edit'>
           <Edit/>
         </IconButton>
-        <IconButton aria-label='delete'>
+        <IconButton aria-label='delete' onClick={(e: React.MouseEvent) => {
+          deleteCard({_id: card.NO_ID_FIELD})
+        }}>
           <Delete/>
         </IconButton>
       </CardActions>

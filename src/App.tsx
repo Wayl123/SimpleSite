@@ -14,6 +14,14 @@ function App() {
     databaseRef.add({content: content, select: select})
   }
 
+  const editCard = async () => {
+
+  }
+  
+  const deleteCard = async ({_id}: any) => {
+    databaseRef.doc(_id).delete()
+  }
+
   return (
     <div>
       <h1>Simple Site</h1>
@@ -26,6 +34,8 @@ function App() {
             <DetailCard 
               key={index}
               card={card}
+              editCard={editCard}
+              deleteCard={deleteCard}
             />
           ))
         :
