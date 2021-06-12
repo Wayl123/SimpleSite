@@ -1,7 +1,7 @@
 import React from 'react'
-import {Card, CardActions, CardContent, CardHeader, Typography, IconButton} from '@material-ui/core'
-import {Edit, Delete} from '@material-ui/icons'
-import {makeStyles, createStyles} from '@material-ui/core/styles'
+import { Card, CardActions, CardContent, CardHeader, Typography, IconButton } from '@material-ui/core'
+import { Edit, Delete } from '@material-ui/icons'
+import { makeStyles, createStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(() => 
   createStyles({

@@ -5,12 +5,25 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import {ThemeProvider} from '@material-ui/core/styles'
 import theme from './styles/theme'
+import { FirebaseAppProvider } from 'reactfire'
+require('dotenv').config()
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FB_APIKEY,
+  authDomain: process.env.REACT_APP_FB_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FB_PROJECTID,
+  storageBucket: process.env.REACT_APP_FB_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FB_MESSAGESENDERID,
+  appId: process.env.REACT_APP_FB_APPID
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </FirebaseAppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
