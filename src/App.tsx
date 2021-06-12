@@ -1,5 +1,5 @@
 import React from 'react';
-import DetailCard from './DetailCard';
+import DetailCard from './components/DetailCard';
 
 function App() {
   return (
