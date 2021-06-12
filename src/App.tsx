@@ -9,14 +9,22 @@ function App() {
     .collection('simpleappdb')
 
   const {status, data} = useFirestoreCollectionData(databaseRef)
-  
-  console.log(data)
-  
+
   return (
     <div>
       <h1>Simple Site</h1>
       <NewCard/>
-      <DetailCard/>
+      {
+        status !== 'loading' && data.length > 0 ?
+          data.map((post, index) => (
+            <DetailCard 
+              key={index}
+              post={post}
+            />
+          ))
+        :
+          <p>No content</p>
+      }
     </div>
   );
 }
