@@ -8,7 +8,9 @@ function App() {
   const databaseRef = useFirestore()
     .collection('simpleappdb')
 
-  const {status, data} = useFirestoreCollectionData(databaseRef)
+  const orderedRef = databaseRef.orderBy('date', 'desc')
+
+  const {status, data} = useFirestoreCollectionData(orderedRef)
 
   const addCard = async ({content, select, date}: any) => {
     databaseRef.add({content: content, select: select, date: date})
