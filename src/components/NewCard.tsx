@@ -40,7 +40,7 @@ export default function NewCard({addCard}: any) {
           content: {value: string}
           select: {value: string}
         }
-        addCard({content: target.content.value, select: target.select.value})
+        addCard({content: target.content.value, select: target.select.value, date: Date.now()})
       }}>
         <FormControl className={style.form}>
           <Input className={style.p40width} name='content' type='text' placeholder='Card Content'/>

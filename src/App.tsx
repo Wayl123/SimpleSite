@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import 'firebase/firestore'
 import { useFirestoreCollectionData, useFirestore } from 'reactfire'
 import NewCard from './components/NewCard'
@@ -10,12 +10,12 @@ function App() {
 
   const {status, data} = useFirestoreCollectionData(databaseRef)
 
-  const addCard = async ({content, select}: any) => {
-    databaseRef.add({content: content, select: select})
+  const addCard = async ({content, select, date}: any) => {
+    databaseRef.add({content: content, select: select, date: date})
   }
 
-  const editCard = async () => {
-
+  const editCard = async ({_id, content, select}: any) => {
+    databaseRef.doc(_id).update({content: content, select: select})
   }
   
   const deleteCard = async ({_id}: any) => {
