@@ -1,6 +1,6 @@
 import React from 'react'
-import {Card, CardHeader, FormControl, Input, Button, InputLabel, TextField, MenuItem} from '@material-ui/core'
-import {makeStyles, createStyles} from '@material-ui/core/styles'
+import { Card, CardHeader, FormControl, Input, Button, TextField, MenuItem } from '@material-ui/core'
+import { makeStyles, createStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(() => 
   createStyles({
@@ -26,7 +26,7 @@ const useStyles = makeStyles(() =>
   })
 )
 
-export default function NewCard() {
+export default function NewCard({addCard}: any) {
   const style = useStyles()
 
   return (
@@ -34,10 +34,17 @@ export default function NewCard() {
       <CardHeader
         title={"New Card"}
       />
-      <form className={style.p100width}>
+      <form className={style.p100width} onSubmit={(e: React.SyntheticEvent) => {
+        e.preventDefault()
+        const target = e.target as typeof e.target & {
+          content: {value: string}
+          select: {value: string}
+        }
+        addCard({content: target.content.value, select: target.select.value, date: Date.now()})
+      }}>
         <FormControl className={style.form}>
           <Input className={style.p40width} name='content' type='text' placeholder='Card Content'/>
-          <TextField className={style.p20width} name='select' label='Colour' select>
+          <TextField className={style.p20width} name='select' label='Colour' defaultValue='primary' select>
             <MenuItem value='primary'>Primary</MenuItem>
             <MenuItem value='secondary'>Secondary</MenuItem>
           </TextField>
