@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+# Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This is a react typescript app that uses material-ui for styling the frontend and reactfire for connecting to the database.
+- This project is mostly for getting used to new language and tool so there are some things like database security are not deeply touched upon.
 
-## Available Scripts
+### Installation
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. For installation clone the repo first with the following:
+```
+git clone https://github.com/Wayl123/SimpleSite.git
+```
+Then navigate into the cloned repo:
+```
+cd SimpleSite
+```
+2. Install all the dependency with `npm install`.
+3. Create a .env file to enter the firebase config variable in, the file should have the following:
+```
+REACT_APP_FB_APIKEY=<Your firebase apiKey>
+REACT_APP_FB_AUTHDOMAIN=<Your firebase authDomain>
+REACT_APP_FB_PROJECTID=<Your firebase projectId>
+REACT_APP_FB_STORAGEBUCKET=<Your firebase storageBucket>
+REACT_APP_FB_MESSAGESENDERID=<Your firebase messagingSenderId>
+REACT_APP_FB_APPID=<Your farebase appId>
+```
+To get these variable you need to create a firebase project and connect a web app to it.
+4. Once that is set up, it should run by just doing `npm start`
